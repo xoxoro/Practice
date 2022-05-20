@@ -15,7 +15,7 @@
 */
 	Cookie cookie1 = new Cookie("name", "SYJ");
 	Cookie cookie2 = new Cookie("age", "20");
-	
+	cookie2.setPath("/path");
 	System.out.println("name: "+ cookie1.getValue());
 	System.out.println("age: "+ cookie2.getValue());
 	
