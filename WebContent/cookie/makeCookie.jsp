@@ -18,7 +18,7 @@
 	cookie2.setPath(request.getContextPath()+"/path");
 	System.out.println("name: "+ cookie1.getValue());
 	System.out.println("age: "+ cookie2.getValue());
-	
+	//
 	response.addCookie(cookie1);
 	response.addCookie(cookie2);
 %>
