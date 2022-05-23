@@ -16,9 +16,9 @@
 	Cookie cookie1 = new Cookie("name", "SYJ");
 	Cookie cookie2 = new Cookie("age", "20");
 	cookie2.setPath(request.getContextPath()+"/path");
+	//쿠키2를 전송하고자 하는 경로를 path1으로 재설정함
 	System.out.println("name: "+ cookie1.getValue());
 	System.out.println("age: "+ cookie2.getValue());
-	//
 	response.addCookie(cookie1);
 	response.addCookie(cookie2);
 %>
