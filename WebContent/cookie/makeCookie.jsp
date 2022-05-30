@@ -19,7 +19,7 @@
 	//쿠키2를 전송하고자 하는 경로를 path1으로 재설정함
 	System.out.println("name: "+ cookie1.getValue());
 	System.out.println("age: "+ cookie2.getValue());
-	response.addCookie(cookie1);
+	response.addCookie(cookie1);//응답에 쿠키를 추가함
 	response.addCookie(cookie2);
 %>
 <!DOCTYPE html>
