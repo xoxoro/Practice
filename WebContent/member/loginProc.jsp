@@ -10,8 +10,26 @@
 	System.out.println("remember:" + remember);
 	//2. 아이디와 비밀번호 같으면 로그인 성공으로 처리 - 아이디 기억하기 여부에 따라 쿠키를 생성하여 응답
 	// - 1시간 유지하는 쿠키
+	if(userid.equals(userpw)){
+		System.out.println("로그인 성공!");
+		if(remember != null){
+			Cookie rememberCookie = new Cookie("remember", userid);
+			rememberCookie.setMaxAge(60*60);
+			response.addCookie(rememberCookie);
+			System.out.println("아이디 쿠키저장!");
+		}else{//아이디 기억하기가 없다면
+			Cookie  rememberCookie = new Cookie("remember", userid);
+			rememberCookie.setMaxAge(0);
+			response.addCookie(rememberCookie);
+			System.out.println("아이디 쿠키제거!");
+		}
+		response.sendRedirect("loginSuccess.jsp");
+	}
 	//3. 아이디와 비밀번호가 같지 않으면 다시 로그인 페이지로!
-	
+	else{
+		System.out.println("로그인 실패!");
+		response.sendRedirect("loginForm.jsp");
+	}
 	//로그인 페이지에 remember 쿠키가 존재하면 
 	//checkbox를 체크상태로 보여지도록 loginForm.jsp를 수정
 	//그러려면 아이디가 userid텍스트 상자에 표시되어야겠지?
