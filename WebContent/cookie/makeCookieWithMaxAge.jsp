@@ -3,6 +3,7 @@
 <%
 	Cookie cookie3 = new Cookie("oneH", "oneH");
 	cookie3.setMaxAge(60*60); //초단위
+	//cookie3.setMaxAge(20) 20초짜리임
 	response.addCookie(cookie3);
 	/*
 		쿠키는 유효시간이 지나면 다시 사용되지 못함
